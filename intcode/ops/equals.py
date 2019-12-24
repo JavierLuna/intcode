@@ -6,5 +6,5 @@ class EqualsOp(BaseOp):
     returns_value = True
 
     @classmethod
-    def execute(cls, a: int, b: int) -> int:
+    def execute(cls, a: int, b: int) -> int:  # type: ignore
         return int(a == b)

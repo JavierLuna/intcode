@@ -8,5 +8,5 @@ class ReadInputOp(BaseOp):
     returns_value = True
 
     @classmethod
-    def execute(cls, io_handler: BaseIOHandler) -> int:
+    def execute(cls, io_handler: BaseIOHandler) -> int:  # type: ignore
         return int(io_handler.input().strip())

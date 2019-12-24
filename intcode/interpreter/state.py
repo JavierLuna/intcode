@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import List
+from typing import List, Dict
 
 from intcode.interpreter.mappings import AccessMode
 
@@ -7,7 +7,7 @@ from intcode.interpreter.mappings import AccessMode
 class MachineState:
 
     def __init__(self, initial_state: List[int], machine_pointer: int = 0, relative_base: int = 0):
-        self._registries = defaultdict(int)
+        self._registries: Dict[int, int] = defaultdict(int)
         self._registries.update({i: state for i, state in enumerate(initial_state)})
         self.machine_pointer = machine_pointer
         self._relative_base = relative_base

@@ -1,4 +1,4 @@
-from typing import Dict, Union
+from typing import Union, Dict, Type
 
 from intcode.interfaces.base_op import BaseOp
 from intcode.ops.addition import AdditionOp
@@ -14,7 +14,7 @@ from intcode.ops.shift_relative_base import ShiftRelativeBaseOp
 
 
 class OpFactory:
-    __OPCODES: Dict[int, BaseOp] = {
+    __OPCODES : Dict[int, Type[BaseOp]] = {
         1: AdditionOp,
         2: MultiplicationOp,
         3: ReadInputOp,
@@ -28,7 +28,7 @@ class OpFactory:
     }
 
     @classmethod
-    def get_op(cls, op_code: Union[int, str]) -> BaseOp:
+    def get_op(cls, op_code: Union[int, str]) -> Type[BaseOp]:
         op_code = int(op_code)
         if op_code not in cls.__OPCODES:
             raise KeyError(f"Opcode '{op_code}' could't be found")

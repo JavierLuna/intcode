@@ -6,5 +6,5 @@ class HaltOp(BaseOp):
     special_parameters = ['machine_state']
 
     @classmethod
-    def execute(cls, machine_state: MachineState) -> None:
+    def execute(cls, machine_state: MachineState) -> None:  # type: ignore
         machine_state.halted = True

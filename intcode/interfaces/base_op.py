@@ -4,7 +4,7 @@ from typing import List, Optional
 
 class BaseOp(metaclass=ABCMeta):
     n_params = 0
-    special_parameters = []
+    special_parameters: List[str] = []
     returns_value = False
     pauses_execution = False
 

@@ -7,6 +7,6 @@ class JumpIfTrueOp(BaseOp):
     special_parameters = ['machine_state']
 
     @classmethod
-    def execute(cls, a: int, destination: int, machine_state: MachineState) -> None:
+    def execute(cls, a: int, destination: int, machine_state: MachineState) -> None:  # type: ignore
         if a:
             machine_state.machine_pointer = destination

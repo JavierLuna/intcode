@@ -8,5 +8,5 @@ class PrintValueOp(BaseOp):
     pauses_execution = True
 
     @classmethod
-    def execute(cls, a: int, io_handler: BaseIOHandler) -> None:
+    def execute(cls, a: int, io_handler: BaseIOHandler) -> None:  # type: ignore
         io_handler.print(str(a))

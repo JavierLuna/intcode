@@ -7,5 +7,5 @@ class ShiftRelativeBaseOp(BaseOp):
     special_parameters = ['machine_state']
 
     @classmethod
-    def execute(cls, a: int, machine_state: MachineState) -> None:
+    def execute(cls, a: int, machine_state: MachineState) -> None:  # type: ignore
         machine_state.shift_relative_base(a)
